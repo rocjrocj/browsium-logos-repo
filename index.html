@@ -49,7 +49,7 @@ function shuffle(array) {
   }
   var html = '<a href=\"/customers/\"><div id=\"brLogos1\" class="brLogos1\">';
   for (var i=0; i < array.length; i++) {
-    html += "<img src=\"images/" + array[i] + ".png\" alt=\"\" width=\"136\" height=\"55\"/>";
+    html += "<img src=\"images/" + array[i] + ".gif\" alt=\"\" width=\"136\" height=\"55\"/>";
     if (i == 6) {
 	  html += "</div><div id=\"brLogos2\" class=\"brLogos2\">";
     } else if (i == 13) {
@@ -62,7 +62,7 @@ function shuffle(array) {
   }
   $("#brLogosAbs").append(html);
   //alert(array.length)
-  //alert(html);
+  //	alert(html);
   return html;
 }
 // animate div every 5 seconds
