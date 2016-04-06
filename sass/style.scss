@@ -17,7 +17,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, 
 }
 
 body {
-	background:#eee;
+	background:#fff;
 	color:#666;
 	font:normal normal 400 14px/18px camingodos-web, 'helvetica neue', helvetica, arial, verdana, sans-serif;
 	margin:0;
@@ -4236,5 +4236,13 @@ div.gray_box { padding: 4px; background-color: #CDCDCD; border: 1px solid #66666
 	left: 1904px;
 }
 .brLogos3 img {
+	float: left;
+}
+.brLogos4 {
+	position: absolute;
+	width: 952px;
+	left: 3000px;
+}
+.brLogos4 img {
 	float: left;
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browsium logo slider</title>
+
+<!-- Bootstrap -->
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+<!-- custom -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+<p style="text-align:center;margin-top:18px;">Meet some of our customers</p>
+<hr width="900">
+
+<div class="brLogos">
+	<div id="brLogosAbs" class="brLogosAbs">
+		<!--<div id="brLogos1" class="brLogos1">
+			<a href="/customers/">
+				<img src="images/3.png" alt="" width="136" height="55"/><img src="images/19.png" alt="BP" width="136" height="55" />
+				<img src="images/6.png" alt="" width="136" height="55" />
+				<img src="images/20.png" alt="" width="136" height="55" />
+				<img src="images/9.png" alt="" width="136" height="55" />
+				<img src="images/21.png" alt="" width="136" height="55" />
+				<img src="images/15.png" alt="" width="136" height="55" />
+			</a>
+		</div>
+		<div id="brLogos2" class="brLogos2">
+			<a href="/customers/">
+				<img src="images/2.png" alt="" width="136" height="55"/>
+				<img src="images/11.png" alt="" width="136" height="55" />
+				<img src="images/5.png" alt="" width="136" height="55" />
+				<img src="images/16.png" alt="" width="136" height="55" />
+				<img src="images/8.png" alt="" width="136" height="55" />
+				<img src="images/13.png" alt="" width="136" height="55" />
+				<img src="images/18.png" alt="" width="136" height="55" />
+			</a>
+		</div>
+		<div id="brLogos3" class="brLogos3">
+			<a href="/customers/">
+				<img src="images/1.png" alt="" width="136" height="55"/>
+				<img src="images/10.png" alt="" width="136" height="55" />
+				<img src="images/4.png" alt="" width="136" height="55" />
+				<img src="images/17.png" alt="" width="136" height="55" />
+				<img src="images/7.png" alt="" width="136" height="55" />
+				<img src="images/12.png" alt="" width="136" height="55" />
+				<img src="images/14.png" alt="" width="136" height="55" />
+			</a>
+		</div>-->
+	</div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="bower_components/bootstrap/dist/js/jquery-1.11.3.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+shuffle(arr);
+console.log(arr);
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  
+  var html = '<a href=\"/customers/\"><div id=\"brLogos1\" class="brLogos1\">';
+for (var i=0; i < array.length; i++) {
+  html += "<img src=\"images/" + array[i] + ".png\" alt=\"\" width=\"136\" height=\"55\" class=\"rocj\"/>";
+  if (i == 6) {
+	  html += "</div><div id=\"brLogos2\" class=\"brLogos2\">";
+  } else if (i == 13) {
+	  html += "</div><div id=\"brLogos3\" class=\"brLogos3\">";
+  } else if (i == 20) {
+	  html += "</div></a>";
+  }
+}
+$("#brLogosAbs").append(html);
+  return html;
+}
+
+var delayLength = 5000;
+var slideNum = 1;
+
+function doMove() {
+	if (slideNum == 1) {
+		$(".brLogosAbs").animate({ "left": -952 });
+		slideNum = 2;
+	} else if (slideNum == 2) {
+		$(".brLogosAbs").animate({ "left": -1904 });
+		slideNum = 3;
+	} else {
+		$(".brLogosAbs").animate({ "left": 0 });
+		slideNum = 1;
+	}
+	
+}
+sliderIntervalID = setInterval(function(){
+		doMove();
+	}, delayLength);
+
+
+</script>
+</body>
+</html>
